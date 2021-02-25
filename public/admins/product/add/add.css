@@ -1,0 +1,16 @@
+.select2-selection__choice__display{
+    background-color: black;
+}
+.image_detail_product, .feature_image_container{
+    width: 10%;
+    height: 10%;
+    object-fit: cover;
+}
+.container_image_detail, .feature_image_container{
+    margin-top: 20px;
+}
+.feature_image{}
+.alert-danger{
+    margin:5px;
+    padding: 3px 5px;
+}

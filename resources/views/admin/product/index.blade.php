@@ -6,6 +6,16 @@
     <title>Add product</title>
 @endsection()
 
+@section('css')
+    <link rel="stylesheet" href="{{asset('admins/product/index/list.css')}}">
+@endsection()
+
+@section('js')
+    <script src="{{asset('vendors/sweetAlert2/sweetalert2@10.js')}}"></script>
+    <script src="{{asset('admins/product/index/list.js')}}"></script>
+@endsection()
+
+
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -35,25 +45,26 @@
                             </thead>
 
                             <tbody>
-                            {{--@foreach($categories as $category)--}}
+                            @foreach($products as $productItem)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Iphone 4</td>
-                                    <td>2.400.000</td>
-                                    <td><img src="" alt=""></td>
-                                    <td>Điện thoại</td>
+                                    <th scope="row">{{$productItem->id}}</th>
+                                    <td>{{$productItem->name}}</td>
+                                    <td>{{number_format($productItem->price)}}</td>
+                                    <td><img class="imgProduct150_100" src="{{$productItem->feature_image}}" alt=""></td>
+                                    <td>{{optional($productItem->category)->name}}</td>
                                     <td>
-                                        <a class="btn btn-default" href="">Edit</a>
-                                        <a class="btn btn-danger" href="">Delete</a>
+                                        <a class="btn btn-default" href="{{route('product.edit',['id'=>$productItem->id])}}">Edit</a>
+                                        <a class="btn btn-danger action_delete"
+                                           data-url="{{route('product.delete',['id'=>$productItem->id])}}"
+                                           href="">Delete</a>
                                     </td>
-
                                 </tr>
-                            {{--@endforeach--}}
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
                     <div class="col-md-12">
-                        {{--{{ $categories->links() }}--}}
+                        {{ $products->links() }}
                     </div>
                 </div>
                 <!-- /.row -->

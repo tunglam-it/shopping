@@ -2,14 +2,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    <title>Trang chủ</title>
+    <title>Edit Menu</title>
 @endsection()
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-    @include('partials.content-header',['name'=>'menu','key'=>'Edit'])
+    @include('partials.content-header',['name'=>'Menu','key'=>'Edit'])
     <!-- /.content-header -->
 
         <!-- Main content -->

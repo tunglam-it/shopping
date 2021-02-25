@@ -3,14 +3,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    <title>Trang chủ</title>
+    <title>Edit Category</title>
 @endsection()
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-    @include('partials.content-header',['name'=>'category','key'=>'Edit'])
+    @include('partials.content-header',['name'=>'Category','key'=>'Edit'])
     <!-- /.content-header -->
 
         <!-- Main content -->

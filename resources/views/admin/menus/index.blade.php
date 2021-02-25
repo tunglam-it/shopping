@@ -3,14 +3,17 @@
 @extends('layouts.admin')
 
 @section('title')
-    <title>Trang chủ</title>
+    <title>List menu</title>
 @endsection()
-
+@section('js')
+    <script src="{{asset('vendors/sweetAlert2/sweetalert2@10.js')}}"></script>
+    <script src="{{asset('admins/menu/index/list.js')}}"></script>
+@endsection()
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-    @include('partials.content-header',['name'=>'menus','key'=>'List'])
+    @include('partials.content-header',['name'=>'Menus','key'=>'List'])
     <!-- /.content-header -->
 
         <!-- Main content -->
@@ -38,7 +41,9 @@
                                     <td>{{ $menu->name }}</td>
                                     <td>
                                         <a class="btn btn-default" href="{{route('menus.edit',['id'=>$menu->id])}}">Edit</a>
-                                        <a class="btn btn-danger" href="{{route('menus.delete',['id'=>$menu->id])}}">Delete</a>
+                                        <a class="btn btn-danger action_delete"
+                                           data-url="{{route('menus.delete',['id'=>$menu->id])}}"
+                                           href="">Delete</a>
                                     </td>
 
                                 </tr>

@@ -12,6 +12,7 @@ class AdminController extends Controller
             return redirect()->to('home');
         }
         return view('login');
+
     }
     public function postLoginAdmin(Request $request)
     {

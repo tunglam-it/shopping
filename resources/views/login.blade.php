@@ -10,7 +10,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #232946;
+            background: linear-gradient(#cff,#fcc);
             height: 100vh;
         }
         #login .container #login-row #login-column #login-box {
@@ -19,6 +19,9 @@
             height: 320px;
             border: 1px solid #9C9C9C;
             background-color: #EAEAEA;
+        }
+        #login-box{
+            background: linear-gradient(#fcc,#cff);
         }
         #login .container #login-row #login-column #login-box #login-form {
             padding: 20px;

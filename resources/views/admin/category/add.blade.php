@@ -3,14 +3,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    <title>Trang chủ</title>
+    <title>Add Category</title>
 @endsection()
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        @include('partials.content-header',['name'=>'category','key'=>'Add'])
+        @include('partials.content-header',['name'=>'Category','key'=>'Add'])
         <!-- /.content-header -->
 
         <!-- Main content -->
@@ -23,8 +23,11 @@
                             <div class="form-group">
                                 <label>Tên danh mục</label>
                                 <input type="text" name="name"
-                                       class="form-control" placeholder="Nhập tên danh mục">
+                                       class="form-control @error('name') is-invalid @enderror" placeholder="Nhập tên danh mục">
                             </div>
+                            @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <div class="form-group">
                                 <label>Chọn danh mục cha</label>
                                 <select class="form-control" name="parent_id">
