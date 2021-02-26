@@ -53,7 +53,7 @@ class MenuController extends Controller
         }
     }
 
-    public function edit($id, Request $request)
+    public function edit($id)
     {
         $menuFollowIdEdit = $this->menu->find($id);
         $optionSelect = $this->menuRecursive->menuRecursiveEdit($menuFollowIdEdit->parent_id);
