@@ -39,7 +39,7 @@ class UserAddRequest extends FormRequest
             'email.required' => 'Không để trống email',
             'password.required' => 'Không để trống password',
             'password.min' => 'Tối thiểu 6 kí tự',
-            'role_id.min' => 'Không để trống vai trò',
+            'role_id.required' => 'Không để trống vai trò',
         ];
     }
 }
