@@ -11,7 +11,6 @@ use App\ProductTag;
 use App\Tag;
 use App\Traits\DeleteModelTrait;
 use App\Traits\StorageImageFile;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Log;
 

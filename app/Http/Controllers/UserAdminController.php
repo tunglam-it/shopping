@@ -6,7 +6,6 @@ use App\Http\Requests\UserAddRequest;
 use App\Role;
 use App\Traits\DeleteModelTrait;
 use App\User;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -84,7 +83,7 @@ class UserAdminController extends Controller
 
     public function delete($id)
     {
-        return $this->deleteModelTrait($id,$this->user);
+        return $this->deleteModelTrait($id, $this->user);
 
     }
 }

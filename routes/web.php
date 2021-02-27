@@ -2,15 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/admin', 'AdminController@loginAdmin');
-
-Route::post('admin/', 'AdminController@postLoginAdmin');
 
 Route::get('/home', function () {
     return view('home');
 });
 
 Route::prefix('admin')->group(function () {
+
+    Route::get('/', [
+        'as' => 'admin.login',
+        'uses' => 'AdminController@loginAdmin'
+    ]);
+
+    Route::post('/', [
+        'as' => 'admin.post-login',
+        'uses' => 'AdminController@postLoginAdmin'
+    ]);
+
     Route::prefix('categories')->group(function () {
         Route::get('/', [
                 'as' => 'categories.index',
@@ -113,7 +121,6 @@ Route::prefix('admin')->group(function () {
         );
     });
 
-    //slider
     Route::prefix('slider')->group(function () {
         Route::get('/', [
                 'as' => 'slider.index',
@@ -205,6 +212,39 @@ Route::prefix('admin')->group(function () {
             'as' => 'user.delete',
             'uses' => 'UserAdminController@delete'
         ]);
+    });
+
+    Route::prefix('role')->group(function () {
+        Route::get('/', [
+                'as' => 'role.index',
+                'uses' => 'RoleAdminController@index'
+            ]
+        );
+        Route::get('/create', [
+                'as' => 'role.create',
+                'uses' => 'RoleAdminController@create'
+            ]
+        );
+        Route::post('/store', [
+                'as' => 'role.store',
+                'uses' => 'RoleAdminController@store'
+            ]
+        );
+        Route::get('/edit/{id}', [
+                'as' => 'role.edit',
+                'uses' => 'RoleAdminController@edit'
+            ]
+        );
+        Route::post('/update/{id}', [
+                'as' => 'role.update',
+                'uses' => 'RoleAdminController@update'
+            ]
+        );
+        Route::get('/delete/{id}', [
+                'as' => 'role.delete',
+                'uses' => 'RoleAdminController@delete'
+            ]
+        );
     });
 });
 

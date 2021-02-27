@@ -1,0 +1,26 @@
+.image_slider_150_100 {
+    width: 130px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.image_slider {
+    height: 130px;
+    width: 110px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.card-header {
+    background: rgb(40, 167, 69);
+    color: white;
+}
+
+form {
+    width: 100%;
+}
+
+input[type='checkbox'] {
+    transform: scale(1.2);
+}
