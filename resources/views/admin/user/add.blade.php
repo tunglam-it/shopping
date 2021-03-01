@@ -7,19 +7,11 @@
 @endsection()
 @section('css')
     <link href="{{asset('vendors/select2/select2.min.css')}}" rel="stylesheet"/>
-    <style>
-        .select2-selection__choice__display {
-            color: black;
-        }
-    </style>
+    <link href="{{asset('admins/user/add/index.css')}}" rel="stylesheet">
 @endsection
 @section('js')
     <script src="{{asset('vendors/select2/select2.min.js')}}"></script>
-    <script>
-        $('.select2_init').select2({
-            'placeholder': 'Chọn vai trò'
-        })
-    </script>
+    <script src="{{asset('public/admins/user/add/list.js')}}"></script>
 @endsection
 @section('content')
     <!-- Content Wrapper. Contains page content -->

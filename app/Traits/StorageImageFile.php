@@ -2,12 +2,13 @@
 
 namespace App\Traits;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 trait StorageImageFile
 {
-    public function storageTraitUpload($request, $fieldName, $folderName)
+    public function storageTraitUpload(Request $request, $fieldName, $folderName)
     {
         if ($request->hasFile($fieldName)) {
             $file = $request->$fieldName;
@@ -19,7 +20,8 @@ trait StorageImageFile
                 'file_path' => Storage::url($filePath)
             ];
             return $dataUploadTrait;
-        } else return null;
+        }
+        return null;
 
     }
 

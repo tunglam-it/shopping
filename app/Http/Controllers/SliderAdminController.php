@@ -6,7 +6,7 @@ use App\Http\Requests\SliderAddRequest;
 use App\Slider;
 use App\Traits\DeleteModelTrait;
 use App\Traits\StorageImageFile;
-use http\Env\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class SliderAdminController extends Controller

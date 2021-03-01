@@ -22,7 +22,8 @@ Route::prefix('admin')->group(function () {
     Route::prefix('categories')->group(function () {
         Route::get('/', [
                 'as' => 'categories.index',
-                'uses' => 'CategoryController@index'
+                'uses' => 'CategoryController@index',
+                'middleware' => 'can:category-list'
             ]
         );
         Route::get('/create', [
@@ -188,10 +189,9 @@ Route::prefix('admin')->group(function () {
 
     Route::prefix('user')->group(function () {
         Route::get('/', [
-                'as' => 'user.index',
-                'uses' => 'UserAdminController@index'
-            ]
-        );
+            'as' => 'user.index',
+            'uses' => 'UserAdminController@index'
+        ]);
         Route::get('/create', [
             'as' => 'user.create',
             'uses' => 'UserAdminController@create'

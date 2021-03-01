@@ -14,7 +14,7 @@ class AddColumnDeletedAtTableUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-$table->softDeletes();
+            $table->softDeletes();
         });
     }
 

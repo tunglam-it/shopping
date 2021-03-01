@@ -10,3 +10,6 @@
     margin-bottom: 10px;
     object-fit: cover;
 }
+.select2-selection__choice__display {
+    color: black;
+}

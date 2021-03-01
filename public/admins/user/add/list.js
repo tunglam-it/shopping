@@ -41,3 +41,7 @@ function actionDelete(event) {
 $(function () {
     $(document).on('click', '.action_delete', actionDelete)//khi nao click vao button co class thi thuc hien function
 })
+
+$('.select2_init').select2({
+    'placeholder': 'Chọn vai trò'
+})

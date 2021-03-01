@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable,SoftDeletes;
+    use Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -40,4 +40,10 @@ class User extends Authenticatable
             'user_id', 'role_id');
     }
 
+    public function checkPermissionAccess()
+    {
+        //b1: lay dc tat ca quyen user dang login he thong
+        //b2: so sanh gia tri dua vao cua route hien tai xem co ton tai trong cac quyen minh lay dc hay k
+        return true;
+    }
 }
